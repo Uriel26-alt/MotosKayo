@@ -1,0 +1,240 @@
+/* ── Contenedor ─────────────────────────────────────── */
+.containerMovimientos {
+  width: 100%;
+  min-height: 100%;
+  background-color: #f8f8f8;
+  padding: 0 24px 80px;
+  box-sizing: border-box;
+}
+
+/* ── Header ─────────────────────────────────────────── */
+.headerMovimientos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 22px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.titleMovimientos {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #000000;
+  letter-spacing: -0.5px;
+}
+
+/* ── Filtro de fecha ────────────────────────────────── */
+.filterContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Wrapper clickeable del input de fecha */
+.dateWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 2px solid #E95A0C;
+  border-radius: 10px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 2px 8px rgba(233, 90, 12, 0.12);
+  user-select: none;
+}
+
+.dateWrapper:hover {
+  border-color: #c44a08;
+  box-shadow: 0 0 0 3px rgba(233, 90, 12, 0.2);
+}
+
+.dateIcon {
+  font-size: 1.1rem;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.dateInput {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111111;
+  cursor: pointer;
+  padding: 0;
+  min-width: 130px;
+}
+
+/* Oculta el ícono nativo del calendario (ya tenemos el propio) */
+.dateInput::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  width: 0;
+  padding: 0;
+  margin: 0;
+}
+
+/* Botón para limpiar la fecha */
+.clearDate {
+  background: none;
+  border: none;
+  color: #888888;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0 2px;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.clearDate:hover { color: #dc2626; }
+
+/* Ganancia del día */
+.ganancia {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111111;
+  background-color: #fff0e6;
+  border: 2px solid #E95A0C;
+  border-radius: 10px;
+  padding: 9px 16px;
+  white-space: nowrap;
+}
+
+.ganancia strong {
+  color: #E95A0C;
+  font-size: 1.1rem;
+}
+
+/* ── Tabla ──────────────────────────────────────────── */
+.tableMovimientos {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.09);
+  background: #ffffff;
+}
+
+/* Encabezado negro */
+.tableMovimientos thead tr {
+  background-color: #000000;
+}
+
+.tableMovimientos th {
+  padding: 15px 12px;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.tableMovimientos thead tr th:first-child {
+  border-left: 4px solid #E95A0C;
+}
+
+.tableMovimientos thead tr {
+  border-bottom: 3px solid #E95A0C;
+}
+
+/* Filas */
+.tableMovimientos tbody tr {
+  transition: background-color 0.2s ease;
+  border-left: 4px solid transparent;
+}
+
+.tableMovimientos tbody tr:nth-child(odd)  { background-color: #ffffff; }
+.tableMovimientos tbody tr:nth-child(even) { background-color: #fafafa; }
+
+.tableMovimientos tbody tr:hover {
+  background-color: #fff0e6 !important;
+  border-left: 4px solid #E95A0C;
+}
+
+.tableMovimientos td {
+  padding: 13px 12px;
+  text-align: center;
+  font-size: 0.97rem;
+  color: #111111;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.tableMovimientos tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ── Badges de tipo ─────────────────────────────────── */
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.badgeVenta {
+  background-color: #E95A0C;
+  color: #ffffff;
+}
+
+.badgeServicio {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.badgeCompra {
+  background-color: #dc2626;
+  color: #ffffff;
+}
+
+/* ── Botones PDF / Excel ────────────────────────────── */
+.buttonsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.actionBtn {
+  background-color: #E95A0C;
+  color: #ffffff;
+  border: none;
+  padding: 11px 28px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 14px rgba(233, 90, 12, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.actionBtn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+  transition: left 0.4s ease;
+}
+
+.actionBtn:hover::before { left: 100%; }
+
+.actionBtn:hover {
+  background-color: #c44a08;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(233, 90, 12, 0.45);
+}
+
+.actionBtn:active { transform: translateY(0); }

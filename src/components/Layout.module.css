@@ -1,0 +1,22 @@
+.yield {
+  background-color: aqua;
+  display: flex;
+  width: 100vw;
+  height: calc(100vh - 60px);
+}
+
+.aside {
+  width: 15vw;
+  height: calc(100vh - 60px); /* asumiendo que tu header mide 60px */
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.content {
+    width: 85%;
+    height: calc(100vh - 60px);
+    overflow-y: scroll;
+    background-color: #ffffff;
+}

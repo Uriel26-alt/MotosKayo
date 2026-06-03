@@ -1,0 +1,261 @@
+/* ── Contenedor ─────────────────────────────────────── */
+.containerMechanics {
+  width: 100%;
+  min-height: 100%;
+  background-color: #f8f8f8;
+  padding: 0 24px 80px;
+  box-sizing: border-box;
+}
+
+/* ── Header ─────────────────────────────────────────── */
+.headerMechanics {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 22px;
+}
+
+.titleMechanics {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #000000;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #777;
+  margin: 4px 0 0;
+}
+
+/* Botón agregar mecánico */
+.buttonMechanics {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #E95A0C;
+  color: #ffffff;
+  border: none;
+  padding: 11px 22px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 14px rgba(233, 90, 12, 0.35);
+  white-space: nowrap;
+}
+
+.buttonMechanics:hover {
+  background-color: #c44a08;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(233, 90, 12, 0.45);
+}
+
+.buttonMechanics:active { transform: translateY(0); }
+
+.iconoBoton { width: 22px; height: 22px; }
+
+/* ── Divisor entre activos e inactivos ─────────────── */
+.divider {
+  height: 1px;
+  background: #e0e0e0;
+  margin: 32px 0 24px;
+}
+
+/* ── Grid de tarjetas ───────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1300px) {
+  .grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 1000px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 700px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── Tarjeta ────────────────────────────────────────── */
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-top: 5px solid transparent;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.13);
+}
+
+.cardActive  { border-top-color: #E95A0C; }
+.cardInactive { border-top-color: #c0c0c0; }
+
+.cardBody {
+  padding: 18px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ── Header de la tarjeta (avatar + nombre) ─────────── */
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.avatar {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid #f0f0f0;
+}
+
+.avatarPlaceholder {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background-color: #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #aaa;
+}
+
+.avatarIcon {
+  width: 36px;
+  height: 36px;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.cardName {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Badge de estado ────────────────────────────────── */
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+.badgeActive {
+  background-color: #d4f5e2;
+  color: #1a7a45;
+}
+
+.badgeInactive {
+  background-color: #fde0e0;
+  color: #c0392b;
+}
+
+/* ── Fila de salario ────────────────────────────────── */
+.salaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f2f2f2;
+  padding-top: 12px;
+}
+
+.salaryLabel {
+  font-size: 0.82rem;
+  color: #999;
+}
+
+.salaryAmount {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+}
+
+/* ── Botones de la tarjeta ──────────────────────────── */
+.cardActions {
+  display: flex;
+  gap: 8px;
+}
+
+.btnProfile {
+  flex: 1;
+  padding: 8px 0;
+  background: #ffffff;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.btnProfile:hover {
+  background: #f5f5f5;
+  border-color: #aaa;
+}
+
+.btnDeactivate {
+  flex: 1;
+  padding: 8px 0;
+  background: #fde8e8;
+  border: 1.5px solid #f5b8b8;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #c0392b;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.btnDeactivate:hover {
+  background: #f9cccc;
+  border-color: #e07070;
+}
+
+.btnActivate {
+  flex: 1;
+  padding: 8px 0;
+  background: #e0f7ec;
+  border: 1.5px solid #a8e6c3;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #1a7a45;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.btnActivate:hover {
+  background: #c4f0d9;
+  border-color: #6ecfa0;
+}

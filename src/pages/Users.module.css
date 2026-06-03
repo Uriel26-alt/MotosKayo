@@ -1,0 +1,407 @@
+/* ── Contenedor ─────────────────────────────────────── */
+.container {
+  width: 100%;
+  min-height: 100%;
+  background: #f8f8f8;
+  padding: 0 24px 80px;
+  box-sizing: border-box;
+}
+
+/* ── Header ─────────────────────────────────────────── */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 24px;
+  gap: 16px;
+}
+
+.title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #000;
+  margin: 0;
+  letter-spacing: -0.4px;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #777;
+  margin: 4px 0 0;
+}
+
+.btnNew {
+  background: #E95A0C;
+  color: #fff;
+  border: none;
+  padding: 11px 22px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(233, 90, 12, 0.35);
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btnNew:hover {
+  background: #c44a08;
+  transform: translateY(-2px);
+}
+
+.btnSync {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 11px 22px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btnSync:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+/* ── Tabla ──────────────────────────────────────────── */
+.tableWrapper {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead tr {
+  background: #111;
+}
+
+.table th {
+  padding: 14px 18px;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #f2f2f2;
+  transition: background 0.15s;
+}
+
+.table tbody tr:last-child { border-bottom: none; }
+
+.table tbody tr:hover { background: #fafafa; }
+
+.rowInactive { opacity: 0.55; }
+
+.table td {
+  padding: 14px 18px;
+  font-size: 0.9rem;
+  color: #111;
+  vertical-align: middle;
+}
+
+/* ── Celda usuario ──────────────────────────────────── */
+.userCell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.userName {
+  font-weight: 600;
+}
+
+/* ── Email ──────────────────────────────────────────── */
+.emailCell {
+  color: #555;
+  font-size: 0.88rem;
+}
+
+/* ── Rol ────────────────────────────────────────────── */
+.roleFixed {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.roleBadge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1.5px solid currentColor;
+  letter-spacing: 0.04em;
+}
+
+.role_ventas  { color: #16a34a; background: #f0fdf4; border-color: #86efac; }
+.role_admin   { color: #2563eb; background: #eff6ff; border-color: #93c5fd; }
+.role_gerente { color: #c44a08; background: #fff7ed; border-color: #fdba74; }
+
+.youLabel {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.roleSelect {
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #333;
+  background: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.roleSelect:focus { border-color: #E95A0C; }
+
+/* ── Estado ─────────────────────────────────────────── */
+.statusBadge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+}
+
+.statusActive   { background: #dcfce7; color: #16a34a; }
+.statusInactive { background: #fee2e2; color: #dc2626; }
+
+/* ── Fecha ──────────────────────────────────────────── */
+.dateCell {
+  color: #888;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+/* ── Acciones ───────────────────────────────────────── */
+.actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btnDeactivate,
+.btnActivate,
+.btnReset {
+  border: none;
+  padding: 6px 14px;
+  border-radius: 7px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter 0.15s, transform 0.15s;
+  white-space: nowrap;
+}
+
+.btnDeactivate,
+.btnActivate,
+.btnReset {
+  border-width: 1.5px;
+  border-style: solid;
+  background: transparent;
+}
+
+.btnDeactivate {
+  color: #dc2626;
+  border-color: #fca5a5;
+  background: #fff5f5;
+}
+
+.btnDeactivate:hover { background: #fee2e2; }
+
+.btnActivate {
+  color: #16a34a;
+  border-color: #86efac;
+  background: #f0fdf4;
+}
+
+.btnActivate:hover { background: #dcfce7; }
+
+.btnReset {
+  color: #92400e;
+  border-color: #fcd34d;
+  background: #fffbeb;
+}
+
+.btnReset:hover { background: #fef3c7; }
+
+/* ── Leyenda de roles ───────────────────────────────── */
+.legend {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: #666;
+  padding: 4px 0;
+}
+
+.legendLabel { font-weight: 600; color: #444; }
+.legendText  { color: #666; }
+.legendSep   { color: #ccc; }
+
+/* ── Toast ──────────────────────────────────────────── */
+.toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  z-index: 9999;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(8px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* ── Vacío ──────────────────────────────────────────── */
+.empty {
+  text-align: center;
+  color: #aaa;
+  padding: 40px;
+  font-size: 0.95rem;
+}
+
+/* ── Modal ──────────────────────────────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.modalHeader h2 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin: 0;
+  color: #111;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: #aaa;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 4px;
+  transition: color 0.15s;
+}
+
+.closeBtn:hover { color: #333; }
+
+.modalForm {
+  padding: 20px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.fieldGroup label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.fieldGroup input,
+.fieldGroup select {
+  padding: 9px 12px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  color: #111;
+  outline: none;
+  transition: border-color 0.2s;
+  background: #fff;
+}
+
+.fieldGroup input:focus,
+.fieldGroup select:focus {
+  border-color: #E95A0C;
+}
+
+.btnSubmit {
+  background: #E95A0C;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: background 0.2s;
+}
+
+.btnSubmit:hover:not(:disabled) { background: #c44a08; }
+.btnSubmit:disabled { background: #ccc; cursor: not-allowed; }

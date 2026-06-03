@@ -1,0 +1,397 @@
+/* Container principal con fondo negro */
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: #000000;
+}
+
+/* Formas de fondo animadas */
+.backgroundShapes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.shape1, .shape2, .shape3, .shape4, .shape5 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+/* Bola grande naranja brillante — top izquierda */
+.shape1 {
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle, #FF7A30 0%, #E95A0C 50%, transparent 75%);
+  top: -12%;
+  left: -12%;
+  opacity: 0.55;
+  animation: floatA 18s ease-in-out infinite;
+}
+
+/* Bola naranja oscura — bottom derecha */
+.shape2 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, #E95A0C 0%, #a33d08 60%, transparent 80%);
+  bottom: -12%;
+  right: -12%;
+  opacity: 0.5;
+  animation: floatB 22s ease-in-out infinite;
+  animation-delay: -6s;
+}
+
+/* Orb central suave */
+.shape3 {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, #FF9040 0%, #E95A0C 55%, transparent 75%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.3;
+  animation: pulse 8s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+/* Orb pequeño naranja vivo — top derecha */
+.shape4 {
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, #FFB347 0%, #E95A0C 60%, transparent 80%);
+  top: 5%;
+  right: 8%;
+  opacity: 0.6;
+  filter: blur(55px);
+  animation: floatC 14s ease-in-out infinite;
+  animation-delay: -9s;
+}
+
+/* Orb alargado naranja tenue — bottom izquierda */
+.shape5 {
+  width: 320px;
+  height: 200px;
+  background: radial-gradient(ellipse, #E95A0C 0%, #7a2e06 70%, transparent 90%);
+  bottom: 10%;
+  left: 5%;
+  opacity: 0.45;
+  filter: blur(70px);
+  animation: floatD 25s ease-in-out infinite;
+  animation-delay: -12s;
+}
+
+/* Trayectorias distintas para cada orb */
+@keyframes floatA {
+  0%   { transform: translate(0px, 0px) scale(1); }
+  20%  { transform: translate(60px, -40px) scale(1.08); }
+  40%  { transform: translate(30px, 70px) scale(0.95); }
+  60%  { transform: translate(-50px, 30px) scale(1.05); }
+  80%  { transform: translate(20px, -60px) scale(1.1); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes floatB {
+  0%   { transform: translate(0px, 0px) scale(1); }
+  25%  { transform: translate(-70px, 50px) scale(1.07); }
+  50%  { transform: translate(40px, -60px) scale(0.93); }
+  75%  { transform: translate(-30px, -40px) scale(1.04); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes floatC {
+  0%   { transform: translate(0px, 0px) scale(1); }
+  30%  { transform: translate(-40px, 60px) scale(1.15); }
+  60%  { transform: translate(50px, -30px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes floatD {
+  0%   { transform: translate(0px, 0px) scaleX(1); }
+  33%  { transform: translate(80px, -50px) scaleX(1.2); }
+  66%  { transform: translate(-40px, 40px) scaleX(0.85); }
+  100% { transform: translate(0px, 0px) scaleX(1); }
+}
+
+/* Orb central que pulsa en tamaño */
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(0.9);  opacity: 0.25; }
+  50%       { transform: translate(-50%, -50%) scale(1.25); opacity: 0.4; }
+}
+
+/* Tarjeta de login con borde pulsante */
+.loginCard {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 480px;
+  padding: 50px 40px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 30px;
+  border: 1px solid rgba(233, 90, 12, 0.35);
+  box-shadow:
+    0 8px 40px rgba(233, 90, 12, 0.2),
+    inset 0 0 60px rgba(233, 90, 12, 0.04);
+  animation: slideIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), borderGlow 4s ease-in-out infinite;
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(100px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    box-shadow:
+      0 8px 40px rgba(233, 90, 12, 0.2),
+      inset 0 0 60px rgba(233, 90, 12, 0.04);
+    border-color: rgba(233, 90, 12, 0.35);
+  }
+  50% {
+    box-shadow:
+      0 8px 60px rgba(233, 90, 12, 0.45),
+      0 0 40px rgba(233, 90, 12, 0.2),
+      inset 0 0 60px rgba(233, 90, 12, 0.08);
+    border-color: rgba(233, 90, 12, 0.7);
+  }
+}
+
+/* Hover: la tarjeta crece y se ilumina */
+.loginCard:hover {
+  transform: scale(1.025);
+  border-color: rgba(233, 90, 12, 0.9);
+  box-shadow:
+    0 0 0 2px rgba(233, 90, 12, 0.6),
+    0 12px 60px rgba(233, 90, 12, 0.55),
+    0 0 80px rgba(233, 90, 12, 0.25),
+    inset 0 0 60px rgba(233, 90, 12, 0.07);
+  animation: slideIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Sección del logo */
+.logoSection {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.logoImg {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  animation: logoGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes logoGlow {
+  from { filter: drop-shadow(0 0 8px rgba(233, 90, 12, 0.5)); }
+  to   { filter: drop-shadow(0 0 28px rgba(233, 90, 12, 1)); }
+}
+
+.frase {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Formulario */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputGroup label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  margin-left: 5px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.inputGroup input {
+  padding: 15px 20px;
+  font-size: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.inputGroup input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.inputGroup input:focus {
+  outline: none;
+  border-color: rgba(233, 90, 12, 0.85);
+  background: rgba(0, 0, 0, 0.55);
+  box-shadow:
+    0 0 22px rgba(233, 90, 12, 0.45),
+    inset 0 2px 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Mensaje de error */
+.error {
+  background: rgba(220, 53, 69, 0.2);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(220, 53, 69, 0.4);
+  font-size: 0.95rem;
+  text-align: center;
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25%       { transform: translateX(-10px); }
+  75%       { transform: translateX(10px); }
+}
+
+/* Remember checkbox */
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.remember input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #E95A0C;
+}
+
+.remember label {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Botón de submit */
+.submitBtn {
+  padding: 16px;
+  background: linear-gradient(135deg, #E95A0C 0%, #c44a08 100%);
+  border: none;
+  border-radius: 15px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow:
+    0 8px 25px rgba(233, 90, 12, 0.5),
+    inset 0 -2px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  animation: btnPulse 3s ease-in-out infinite;
+}
+
+@keyframes btnPulse {
+  0%, 100% { box-shadow: 0 8px 25px rgba(233, 90, 12, 0.5), inset 0 -2px 10px rgba(0,0,0,0.2); }
+  50%       { box-shadow: 0 8px 40px rgba(233, 90, 12, 0.75), inset 0 -2px 10px rgba(0,0,0,0.2); }
+}
+
+.submitBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: left 0.5s;
+}
+
+.submitBtn:hover::before {
+  left: 100%;
+}
+
+.submitBtn:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 14px 40px rgba(233, 90, 12, 0.65),
+    inset 0 -2px 10px rgba(0, 0, 0, 0.2);
+  animation: none;
+}
+
+.submitBtn:active {
+  transform: translateY(0);
+  box-shadow:
+    0 5px 15px rgba(233, 90, 12, 0.35),
+    inset 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .loginCard { max-width: 420px; padding: 40px 35px; }
+  .logoImg   { max-width: 170px; }
+  .frase     { font-size: 1rem; }
+  .shape1    { width: 400px; height: 400px; }
+  .shape2    { width: 320px; height: 320px; }
+  .shape3    { width: 280px; height: 280px; }
+  .shape4    { width: 200px; height: 200px; }
+  .shape5    { width: 240px; height: 150px; }
+}
+
+@media (max-width: 768px) {
+  .loginCard          { max-width: 380px; padding: 35px 30px; }
+  .logoImg            { max-width: 150px; }
+  .frase              { font-size: 0.95rem; }
+  .logoSection        { margin-bottom: 30px; }
+  .form               { gap: 20px; }
+  .inputGroup input   { padding: 12px 16px; font-size: 0.95rem; }
+  .submitBtn          { padding: 14px; font-size: 1rem; }
+  .shape1, .shape2, .shape3, .shape4, .shape5 { filter: blur(60px); }
+}
+
+@media (max-width: 576px) {
+  .container          { padding: 20px; }
+  .loginCard          { max-width: 100%; padding: 30px 25px; border-radius: 25px; }
+  .logoImg            { max-width: 130px; }
+  .frase              { font-size: 0.9rem; }
+  .logoSection        { margin-bottom: 25px; }
+  .form               { gap: 18px; }
+  .inputGroup label   { font-size: 0.9rem; }
+  .inputGroup input   { padding: 12px 15px; font-size: 0.9rem; }
+  .remember label     { font-size: 0.85rem; }
+  .submitBtn          { padding: 13px; font-size: 0.95rem; }
+  .shape1             { width: 300px; height: 300px; }
+  .shape2             { width: 240px; height: 240px; }
+  .shape3             { width: 200px; height: 200px; }
+  .shape4             { width: 160px; height: 160px; }
+  .shape5             { width: 180px; height: 110px; }
+}
+
+@media (max-width: 380px) {
+  .loginCard          { padding: 25px 20px; }
+  .logoImg            { max-width: 110px; }
+  .frase              { font-size: 0.85rem; }
+  .inputGroup input   { padding: 10px 14px; }
+  .submitBtn          { padding: 12px; font-size: 0.9rem; }
+}

@@ -1,0 +1,474 @@
+/* ── Contenedor principal ─────────────────────────────── */
+.container {
+  width: 100%;
+  min-height: 100%;
+  background-color: #f8f8f8;
+  padding: 0 24px 80px;
+  box-sizing: border-box;
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+.header {
+  padding: 20px 0 20px;
+  margin-bottom: 16px;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.iconHeader {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #E95A0C, #ff7b35);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 4px 14px rgba(233, 90, 12, 0.4);
+  flex-shrink: 0;
+}
+
+.iconHeader svg {
+  width: 26px;
+  height: 26px;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #000000;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+.badgeHeader {
+  background: #E95A0C;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 50px;
+  padding: 5px 14px;
+  box-shadow: 0 3px 10px rgba(233, 90, 12, 0.4);
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 3px 10px rgba(233, 90, 12, 0.4); }
+  50% { box-shadow: 0 3px 20px rgba(233, 90, 12, 0.75); }
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #666666;
+  margin: 0;
+}
+
+/* ── Banner de alerta destacado ─────────────────────────── */
+.alertaBanner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 24px;
+  background: linear-gradient(135deg, #fff4ee 0%, #fff8f3 100%);
+  border: 2px solid #E95A0C;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(233, 90, 12, 0.15);
+  flex-wrap: wrap;
+}
+
+.alertaBannerIcono {
+  font-size: 2rem;
+  flex-shrink: 0;
+  animation: shake 4s ease-in-out infinite;
+}
+
+@keyframes shake {
+  0%, 90%, 100% { transform: rotate(0deg); }
+  92% { transform: rotate(-10deg); }
+  94% { transform: rotate(10deg); }
+  96% { transform: rotate(-6deg); }
+  98% { transform: rotate(6deg); }
+}
+
+.alertaBannerTexto {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.alertaBannerTexto strong {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #E95A0C;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.alertaBannerTexto span {
+  font-size: 0.92rem;
+  color: #444;
+}
+
+.btnMarcarTodas {
+  padding: 9px 18px;
+  background: #E95A0C;
+  color: #ffffff;
+  border: none;
+  border-radius: 9px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 3px 10px rgba(233, 90, 12, 0.35);
+  white-space: nowrap;
+}
+
+.btnMarcarTodas:hover {
+  background: #c44a08;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(233, 90, 12, 0.45);
+}
+
+/* ── Filtros ─────────────────────────────────────────────── */
+.filtros {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filtroBt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border: 2px solid #e0e0e0;
+  border-radius: 25px;
+  background: #ffffff;
+  color: #555555;
+  font-size: 0.93rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filtroBt:hover {
+  border-color: #E95A0C;
+  color: #E95A0C;
+}
+
+.filtroActivo {
+  background: #E95A0C;
+  border-color: #E95A0C;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(233, 90, 12, 0.35);
+}
+
+.filtroActivo:hover {
+  color: #ffffff;
+  border-color: #c44a08;
+  background: #c44a08;
+}
+
+.filtroCont {
+  background: #E95A0C;
+  color: #ffffff;
+  border-radius: 50px;
+  padding: 1px 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  min-width: 20px;
+  text-align: center;
+}
+
+.filtroActivo .filtroCont {
+  background: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+.filtroContActivo {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* ── Lista ───────────────────────────────────────────────── */
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── Estados (loading, vacío, error) ────────────────────── */
+.estadoBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 64px 24px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  color: #888888;
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+.estadoBox p {
+  margin: 0;
+}
+
+.estadoIcono {
+  font-size: 2.8rem;
+}
+
+.errorBox {
+  color: #c0392b;
+  border: 1.5px solid rgba(192, 57, 43, 0.2);
+  background: #fff8f8;
+}
+
+.spinner {
+  width: 42px;
+  height: 42px;
+  border: 4px solid #f0f0f0;
+  border-top-color: #E95A0C;
+  border-radius: 50%;
+  animation: girar 0.75s linear infinite;
+}
+
+@keyframes girar {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Tarjeta de notificación ────────────────────────────── */
+.tarjeta {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 22px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+  border-left: 4px solid transparent;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.1);
+}
+
+.tarjetaNoLeida {
+  border-left-color: #E95A0C;
+  background: linear-gradient(135deg, #fffaf7 0%, #ffffff 100%);
+}
+
+.tarjetaLeida {
+  border-left-color: #e0e0e0;
+}
+
+/* Icono izquierdo */
+.tarjetaIzq {
+  flex-shrink: 0;
+}
+
+.alertaIcono {
+  width: 46px;
+  height: 46px;
+  background: linear-gradient(135deg, #E95A0C, #ff7b35);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: white;
+  box-shadow: 0 4px 12px rgba(233, 90, 12, 0.35);
+}
+
+.alertaIconoLeido {
+  background: #e8e8e8;
+  box-shadow: none;
+  color: #999999;
+}
+
+/* Cuerpo */
+.tarjetaCuerpo {
+  flex: 1;
+  min-width: 0;
+}
+
+.tarjetaEncabezado {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.tarjetaTitulo {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #000000;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.tarjetaLeida .tarjetaTitulo {
+  color: #888888;
+}
+
+/* Punto pulsante para no leída */
+.punto {
+  width: 9px;
+  height: 9px;
+  background: #E95A0C;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: puntoPulso 2s ease-in-out infinite;
+}
+
+@keyframes puntoPulso {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(233, 90, 12, 0.5); }
+  50% { box-shadow: 0 0 0 7px rgba(233, 90, 12, 0); }
+}
+
+.tarjetaDesc {
+  font-size: 0.94rem;
+  color: #444444;
+  margin: 0 0 10px;
+  line-height: 1.55;
+}
+
+.tarjetaLeida .tarjetaDesc {
+  color: #999999;
+}
+
+.tarjetaMeta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.tarjetaFecha {
+  font-size: 0.8rem;
+  color: #aaaaaa;
+}
+
+.estadoBadge {
+  font-size: 0.74rem;
+  font-weight: 700;
+  border-radius: 50px;
+  padding: 2px 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.estadoNoLeido {
+  background: #fff0e6;
+  color: #E95A0C;
+  border: 1px solid rgba(233, 90, 12, 0.3);
+}
+
+.estadoLeido {
+  background: #f0f0f0;
+  color: #888888;
+}
+
+/* Botón marcar como leída */
+.btnLeer {
+  flex-shrink: 0;
+  align-self: center;
+  padding: 9px 16px;
+  background: transparent;
+  border: 2px solid #E95A0C;
+  border-radius: 9px;
+  color: #E95A0C;
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btnLeer:hover {
+  background: #E95A0C;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(233, 90, 12, 0.35);
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 14px 60px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .iconHeader {
+    width: 40px;
+    height: 40px;
+  }
+
+  .alertaBanner {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+
+  .btnMarcarTodas {
+    width: 100%;
+    text-align: center;
+  }
+
+  .tarjeta {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 16px;
+  }
+
+  .btnLeer {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .filtros {
+    gap: 8px;
+  }
+
+  .filtroBt {
+    padding: 7px 12px;
+    font-size: 0.85rem;
+  }
+
+  .tarjetaTitulo {
+    font-size: 0.8rem;
+  }
+
+  .tarjetaDesc {
+    font-size: 0.88rem;
+  }
+}

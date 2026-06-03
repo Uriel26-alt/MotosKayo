@@ -1,0 +1,73 @@
+/* Foto circular del mecánico */
+.mechanicPhoto {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ffffff;
+  outline: 3px solid #E95A0C;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Placeholder cuando no hay foto */
+.photoPlaceholder {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  border: 4px solid #ffffff;
+  outline: 3px solid #ddd;
+}
+
+.photoPlaceholderIcon {
+  width: 80px;
+  height: 80px;
+}
+
+/* Botón subir/cambiar foto */
+.uploadBtn {
+  background-color: #E95A0C;
+  color: #ffffff;
+  border: none;
+  padding: 9px 20px;
+  border-radius: 9px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  width: 100%;
+  max-width: 170px;
+}
+
+.uploadBtn:hover:not(:disabled) {
+  background-color: #c44a08;
+  transform: translateY(-1px);
+}
+
+.uploadBtn:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Badge de estado en el detalle */
+.statusBadge {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 4px 16px;
+  border-radius: 20px;
+}
+
+.active {
+  background-color: #d4f5e2;
+  color: #1a7a45;
+}
+
+.inactive {
+  background-color: #fde0e0;
+  color: #c0392b;
+}

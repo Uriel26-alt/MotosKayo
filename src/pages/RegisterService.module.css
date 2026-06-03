@@ -1,0 +1,572 @@
+/* ── Contenedor ─────────────────────────────────────── */
+.containerRegisterService {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  padding: 0 24px 60px;
+  box-sizing: border-box;
+}
+
+/* ── Header ─────────────────────────────────────────── */
+.headerRegisterService {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 24px;
+}
+
+.titleRegisterService {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #000000;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+/* Botón volver */
+.buttonService {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #000000;
+  color: #ffffff;
+  border: 2px solid #000000;
+  padding: 10px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.buttonService:hover {
+  background-color: #ffffff;
+  color: #000000;
+  transform: translateX(-3px);
+}
+
+.iconoBoton {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+
+.buttonService:hover .iconoBoton {
+  filter: none;
+}
+
+/* ── Formulario ─────────────────────────────────────── */
+.formRegisterService {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Sección card */
+.formSection {
+  background: #ffffff;
+  border-radius: 16px;
+  border-top: 4px solid #E95A0C;
+  padding: 28px 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+}
+
+.sectionTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #E95A0C;
+  margin: 0 0 22px 0;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #f3f3f3;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.inputGroup {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 220px;
+}
+
+.inputGroup label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.inputGroup input,
+.inputGroup textarea,
+.inputGroup select {
+  padding: 12px 16px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 2px solid #e8e8e8;
+  background-color: #fafafa;
+  color: #111111;
+  transition: border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+  font-family: inherit;
+}
+
+.inputGroup input::placeholder,
+.inputGroup textarea::placeholder {
+  color: #bbbbbb;
+}
+
+.inputGroup input:focus,
+.inputGroup textarea:focus,
+.inputGroup select:focus {
+  outline: none;
+  border-color: #E95A0C;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(233, 90, 12, 0.15);
+}
+
+.inputGroup textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Quitar flechas en inputs numéricos */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+/* ── Sección de productos seleccionados ─────────────── */
+.summaryContainer {
+  background: #ffffff;
+  border-radius: 16px;
+  border-top: 4px solid #E95A0C;
+  padding: 28px 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+}
+
+.summaryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #f3f3f3;
+  gap: 16px;
+}
+
+.summaryTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #E95A0C;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+/* Botón agregar producto */
+.addButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #E95A0C;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 12px rgba(233, 90, 12, 0.3);
+  white-space: nowrap;
+}
+
+.addButton:hover {
+  background-color: #c44a08;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(233, 90, 12, 0.4);
+}
+
+.addButton:active { transform: translateY(0); }
+
+/* Fila de producto seleccionado */
+.productRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  background: #fafafa;
+  border-radius: 10px;
+  border: 1px solid #f0f0f0;
+  border-left: 3px solid #E95A0C;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  gap: 12px;
+}
+
+.productRow:hover {
+  background: #fff0e6;
+  transform: translateX(4px);
+}
+
+.productInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111111;
+}
+
+.productInfo span:last-child {
+  color: #888888;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.price {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #E95A0C;
+  white-space: nowrap;
+  min-width: 100px;
+  text-align: right;
+}
+
+.deleteButton {
+  background-color: #dc2626;
+  color: #ffffff;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 700;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.deleteButton:hover {
+  background-color: #b91c1c;
+  transform: translateY(-1px);
+}
+
+/* ── Barra inferior: total + guardar ────────────────── */
+.buttonContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 28px;
+  background: #ffffff;
+  border-radius: 16px;
+  border-top: 4px solid #E95A0C;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  gap: 20px;
+}
+
+.total {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #E95A0C;
+}
+
+.submitButton {
+  background-color: #E95A0C;
+  color: #ffffff;
+  border: none;
+  padding: 13px 40px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 14px rgba(233, 90, 12, 0.35);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.submitButton::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+  transition: left 0.4s ease;
+}
+
+.submitButton:hover::before { left: 100%; }
+
+.submitButton:hover {
+  background-color: #c44a08;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(233, 90, 12, 0.45);
+}
+
+.submitButton:active { transform: translateY(0); }
+
+/* ── Modal de selección de producto ─────────────────── */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  backdrop-filter: blur(4px);
+  animation: fadeInBackdrop 0.25s ease;
+}
+
+@keyframes fadeInBackdrop {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modalContent {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 580px;
+  max-height: 85vh;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(80px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* Header del modal — negro */
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 28px;
+  background: #000000;
+  border-bottom: 3px solid #E95A0C;
+}
+
+.modalHeader h2 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.closeBtn {
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: #ffffff;
+  font-size: 1.6rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  line-height: 1;
+  padding: 0;
+}
+
+.closeBtn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(90deg);
+}
+
+/* Lista de productos con scroll */
+.productList {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.productList::-webkit-scrollbar       { width: 6px; }
+.productList::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
+.productList::-webkit-scrollbar-thumb { background: #E95A0C; border-radius: 10px; }
+.productList::-webkit-scrollbar-thumb:hover { background: #c44a08; }
+
+.emptyMessage {
+  text-align: center;
+  color: #888888;
+  font-size: 1rem;
+  padding: 40px 20px;
+}
+
+/* Item de producto en el modal */
+.productItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 18px;
+  background: #fafafa;
+  border-radius: 12px;
+  border: 2px solid #f0f0f0;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  gap: 16px;
+}
+
+.productItem:hover {
+  border-color: #E95A0C;
+  box-shadow: 0 4px 14px rgba(233, 90, 12, 0.15);
+  transform: translateY(-2px);
+}
+
+.productDetails { flex: 1; }
+
+.productDetails h3 {
+  margin: 0 0 6px 0;
+  font-size: 1rem;
+  color: #111111;
+  font-weight: 700;
+}
+
+.productPrice {
+  margin: 0;
+  font-size: 1rem;
+  color: #E95A0C;
+  font-weight: 700;
+}
+
+.quantitySelector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.quantitySelector label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.quantityInput {
+  width: 64px;
+  padding: 8px 10px;
+  border: 2px solid #e8e8e8;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-align: center;
+  background: #ffffff;
+  color: #111111;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quantityInput:focus {
+  outline: none;
+  border-color: #E95A0C;
+  box-shadow: 0 0 0 3px rgba(233, 90, 12, 0.15);
+}
+
+.addProductBtn {
+  background-color: #E95A0C;
+  color: #ffffff;
+  padding: 9px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.addProductBtn:hover {
+  background-color: #c44a08;
+  transform: translateY(-1px);
+}
+
+/* Botón cerrar modal */
+.closeModalBtn {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 13px 24px;
+  border: none;
+  border-radius: 0 0 20px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+  transition: background-color 0.2s ease;
+}
+
+.closeModalBtn:hover { background-color: #1a1a1a; }
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .containerRegisterService { padding: 16px 16px 60px; }
+
+  .headerRegisterService {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  .titleRegisterService { font-size: 2rem; text-align: center; }
+  .buttonService        { justify-content: center; }
+
+  .formSection          { padding: 20px; }
+  .row                  { flex-direction: column; gap: 0; }
+  .inputGroup           { min-width: 100%; margin-bottom: 16px; }
+  .summaryContainer     { padding: 20px; }
+
+  .buttonContainer {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .total        { text-align: center; font-size: 1.6rem; }
+  .submitButton { width: 100%; }
+
+  .productRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .price          { text-align: left; }
+  .deleteButton   { width: 100%; }
+
+  .modalContent   { width: 95%; max-height: 90vh; }
+  .modalHeader    { padding: 18px 20px; }
+
+  .productItem {
+    flex-direction: column;
+    gap: 14px;
+    align-items: stretch;
+  }
+
+  .quantitySelector { justify-content: space-between; }
+  .addProductBtn    { flex: 1; }
+}
